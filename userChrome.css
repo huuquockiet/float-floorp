@@ -1,0 +1,160 @@
+@import "icons.css";
+
+@keyframes floating-urlbar-appear {
+    0% {
+        scale: 0.95;
+        opacity: 0.5;
+    }
+
+    100% {
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+@keyframes appear {
+    0% {
+        right: 40%;
+        width: 20%;
+        opacity: 0;
+    }
+
+    100% {
+        right: 25%;
+        width: 50%;
+        opacity: 1;
+    }
+}
+
+@keyframes tab-appear {
+    from {
+        scale: 0.8;
+    }
+
+    to {
+        scale: 1;
+    }
+}
+
+:root {
+    --lwt-accent-color: light-dark(
+        rgba(255, 255, 255, 0.5),
+        rgba(0, 0, 0, 0.5)
+    ) !important;
+}
+
+/* Change tab height */
+:root {
+    --tab-toolbar-navbar-overlap: 0px !important;
+    --tab-min-height: 35px !important;
+}
+:root #tabbrowser-tabs {
+    --tab-min-height: 35px !important;
+}
+#TabsToolbar {
+    height: var(--tab-min-height) !important;
+}
+
+/* Floating url menu + animation*/
+
+#tabbrowser-tabbox {
+    box-shadow: none !important;
+    outline: none !important;
+    overflow: unset !important;
+}
+
+#navigator-toolbox {
+    border: none !important;
+}
+
+#urlbar[open] {
+    top: 17vh !important;
+    width: 60% !important;
+    left: 50% !important;
+    translate: -50% 0 !important;
+    opacity: 1 !important;
+    animation: floating-urlbar-appear 0.2s ease !important;
+}
+
+/* Rouned stuffs */
+
+#urlbar-searchmode-switcher,
+#tracking-protection-icon-container,
+#identity-icon-box,
+#identity-permission-box,
+#page-action-buttons hbox {
+    border-radius: 20px !important;
+}
+
+#urlbar-background,
+#urlbar-results div {
+    border-radius: 20px !important;
+}
+
+/* Rounded tab corners */
+
+:root:not([inDOMFullscreen]) {
+    #tabbrowser-tabbox {
+        border-radius: 6px !important;
+    }
+
+    #browser {
+        padding: 5px !important;
+        background: var(--lwt-accent-color) !important;
+
+        :not(hbox) {
+            border-radius: 6px !important;
+        }
+    }
+}
+/* Extra */
+
+#nav-bar {
+    margin: 2px 5px 0px 5px !important;
+    border-radius: 6px !important;
+    border: none !important;
+}
+
+#TabsToolbar-customization-target {
+    margin-left: 3px !important;
+    margin-top: 2px !important;
+}
+
+/* Tabs */
+
+.tabbrowser-tab {
+    transition: all 100ms cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    scale: 1;
+    animation: tab-appear 200ms ease-out !important;
+    position: relative;
+    bottom: 0;
+}
+
+.tabbrowser-tab:not([selected]):hover {
+    scale: 0.95;
+}
+
+.tab-background,
+#new-tab-button,
+.tab-close-button.close-icon {
+    border-radius: 10px !important;
+    transition: background-color 100ms linear;
+}
+
+.tab-background[selected],
+.tab-background {
+    position: relative;
+    border: none !important;
+}
+
+.tab-background[selected]::before {
+    content: "";
+    width: 50%;
+    height: 5px;
+    background: linear-gradient(90deg, #0054b4, #40e0d0) !important;
+    position: absolute;
+    border-radius: 8px;
+    bottom: -3px;
+    right: 25%;
+    animation: appear 200ms ease-out;
+}
