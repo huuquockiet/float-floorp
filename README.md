@@ -1,7 +1,8 @@
-# Floorp CSS
-My personal Floorp CSS ( very badly written)
+<h1 style="text-align: center;">Float Floorp</h1>
+<p style="text-align: center;">Make your Floorp float~</p>
 
-icons.css is forked from Natsumi (https://github.com/greeeen-dev/natsumi-browser) with some modifications\
-Lucide icons license: https://lucide.dev/license. \
-Please use Proton style\
-Don't use system theme
+This is my personal CSS for Floorp.
+
+## License
+[Natsumi](https://github.com/greeeen-dev/natsumi-browser):  GPL-3.0<br/>
+[Lucide Icons](https://lucide.dev/): MIT
