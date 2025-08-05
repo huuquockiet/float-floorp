@@ -39,10 +39,15 @@
 /* Config */
 
 :root {
-    --lwt-accent-color: light-dark(
+    /*--lwt-accent-color: light-dark(
         rgba(255, 255, 255, 0.5),
         rgba(0, 0, 0, 0.5)
-    ) !important;
+    ) !important;*/
+    --transparentcy-idk: color-mix(
+        in srgb,
+        var(--lwt-accent-color) 540%,
+        transparent
+    );
     --line-gradient: linear-gradient(90deg, #0054b4, #40e0d0);
     --tab-radius: 10px;
     --not-tab-radius: 6px;
@@ -105,7 +110,7 @@
 
     #browser {
         padding: 5px !important;
-        background: var(--lwt-accent-color) !important;
+        background: var(--transparentcy-idk) !important;
 
         :not(hbox) {
             border-radius: var(--not-tab-radius) !important;
@@ -142,6 +147,10 @@
 #workspaces-toolbar-button {
     border-radius: var(--tab-radius) !important;
     margin: 4px 0px !important;
+}
+
+#navigator-toolbox {
+    background: var(--transparentcy-idk) !important;
 }
 
 /* Tabs */
