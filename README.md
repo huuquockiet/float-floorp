@@ -1,5 +1,5 @@
 <h1 align="center">Float Floorp</h1>
-<p style="text-align: center;">Make your Floorp float~</p>
+<p align="center">Make your Floorp float~</p>
 
 This is my personal CSS for Floorp.
 
