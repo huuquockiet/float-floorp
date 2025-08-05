@@ -45,7 +45,7 @@
     ) !important;*/
     --transparentcy-idk: color-mix(
         in srgb,
-        var(--lwt-accent-color) 540%,
+        var(--lwt-accent-color) 50%,
         transparent
     );
     --line-gradient: linear-gradient(90deg, #0054b4, #40e0d0);
