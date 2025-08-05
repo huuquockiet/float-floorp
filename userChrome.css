@@ -36,11 +36,16 @@
     }
 }
 
+/* Config */
+
 :root {
     --lwt-accent-color: light-dark(
         rgba(255, 255, 255, 0.5),
         rgba(0, 0, 0, 0.5)
     ) !important;
+    --line-gradient: linear-gradient(90deg, #0054b4, #40e0d0);
+    --tab-radius: 10px;
+    --not-tab-radius: 6px;
 }
 
 /* Change tab height */
@@ -95,7 +100,7 @@
 
 :root:not([inDOMFullscreen]) {
     #tabbrowser-tabbox {
-        border-radius: 6px !important;
+        border-radius: var(--not-tab-radius) !important;
     }
 
     #browser {
@@ -103,7 +108,7 @@
         background: var(--lwt-accent-color) !important;
 
         :not(hbox) {
-            border-radius: 6px !important;
+            border-radius: var(--not-tab-radius) !important;
         }
     }
 }
@@ -111,13 +116,32 @@
 
 #nav-bar {
     margin: 2px 5px 0px 5px !important;
-    border-radius: 6px !important;
+    border-radius: var(--not-tab-radius) !important;
     border: none !important;
 }
 
 #TabsToolbar-customization-target {
-    margin-left: 3px !important;
+    margin-left: 5px !important;
     margin-top: 2px !important;
+}
+
+#panel-sidebar-select-box {
+    margin-left: 5px !important;
+}
+
+#PersonalToolbar {
+    border-radius: var(--not-tab-radius) !important;
+    margin: 5px 5px 0px 5px !important;
+}
+
+#panel-sidebar-splitter {
+    width: 5px !important;
+    background: transparent !important;
+}
+
+#workspaces-toolbar-button {
+    border-radius: var(--tab-radius) !important;
+    margin: 4px 0px !important;
 }
 
 /* Tabs */
@@ -135,9 +159,8 @@
 }
 
 .tab-background,
-#new-tab-button,
 .tab-close-button.close-icon {
-    border-radius: 10px !important;
+    border-radius: var(--tab-radius) !important;
     transition: background-color 100ms linear;
 }
 
@@ -151,7 +174,7 @@
     content: "";
     width: 50%;
     height: 5px;
-    background: linear-gradient(90deg, #0054b4, #40e0d0) !important;
+    background: var(--line-gradient) !important;
     position: absolute;
     border-radius: 8px;
     bottom: -3px;
