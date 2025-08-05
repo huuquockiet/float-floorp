@@ -2,9 +2,7 @@
 icons.css (modified)
 
 Copyright (c) 2024-present Green (@greeeen-dev)
-Modifications Copyright (c) 2025 [Your Name or Handle]
-
-This file is part of Natsumi Browser.
+Modifications Copyright (c) 2025 kiet
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -200,7 +198,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
   }
 
   #reader-mode-button[readeractive] #reader-mode-button-icon {
-    stroke: light-dark(var(--natsumi-colors-primary), var(--natsumi-primary-color));
+    stroke: var(--urlbarView-action-color);
   }
 
   #picture-in-picture-button-icon {
@@ -220,11 +218,11 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
   }
 
   #star-button[starred="true"] {
-    stroke: var(--natsumi-colors-primary);
+    stroke: var(--urlbarView-action-color);
     list-style-image: url("icons/lucide/bookmark-check.svg") !important;
 
     @media (prefers-color-scheme: dark) {
-      stroke: var(--natsumi-primary-color);
+      stroke: var(--urlbarView-action-color);
     }
   }
 
@@ -243,11 +241,11 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
   }
 
   #splitView-image {
-    stroke: var(--natsumi-colors-primary);
+    stroke: currentColor;
     list-style-image: url("icons/lucide/split-view.svg") !important;
 
     @media (prefers-color-scheme: dark) {
-      stroke: var(--natsumi-primary-color);
+      stroke: currentColor;
     }
   }
 
@@ -371,81 +369,3 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
     mask-image: url("icons/lucide/folder-filled.svg") !important;
   }
 }
-
-@media (not -moz-pref("natsumi.pip.disabled")) and -moz-pref("natsumi.browser.type", "floorp") {
-  @-moz-document url("chrome://global/content/pictureinpicture/player.xhtml") {
-    .center-controls, .end-controls {
-      button {
-        -moz-context-properties: stroke, fill, fill-opacity, stroke-opacity !important;
-        stroke: light-dark(black, white) !important;
-        background-size: 18px !important;
-      }
-    }
-
-    #close, #unpip {
-      -moz-context-properties: stroke, fill, fill-opacity, stroke-opacity !important;
-      stroke: light-dark(black, white) !important;
-    }
-
-    #playpause {
-      background-image: url("icons/lucide/play.svg") !important;
-    }
-
-    .playing #playpause {
-      background-image: url("icons/lucide/pause.svg") !important;
-    }
-
-    #seekBackward, #seekForward {
-      &::before {
-        content: "5";
-        font-size: 8px;
-        position: relative !important;
-        top: -2px !important;
-        color: light-dark(black, white) !important;
-      }
-
-      &:hover::before {
-        top: 5px !important;
-      }
-    }
-
-    #seekBackward {
-      background-image: url("icons/lucide/rotate-left.svg") !important;
-    }
-
-    #seekForward {
-      background-image: url("icons/lucide/rotate-right.svg") !important;
-    }
-
-    #audio {
-      background-image: url("icons/lucide/volume.svg") !important;
-    }
-
-    .muted #audio {
-      background-image: url("icons/lucide/volume-off.svg") !important;
-    }
-
-    #fullscreen {
-      background-image: url("icons/lucide/fullscreen.svg") !important;
-    }
-
-    body:fullscreen #fullscreen {
-      background-image: url("icons/lucide/fullscreen-exit.svg") !important;
-    }
-
-    #closed-caption {
-      background-image: url("icons/lucide/captions.svg") !important;
-
-      &[disabled="true"] {
-        stroke: light-dark(#999, #777) !important;
-      }
-    }
-
-    #close {
-      background-image: url("icons/lucide/close.svg") !important;
-    }
-
-    #unpip {
-      background-image: url("icons/lucide/pip-exit.svg") !important;
-    }
-  }

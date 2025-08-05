@@ -108,16 +108,13 @@
 /* Rounded tab corners */
 
 :root:not([inDOMFullscreen]) {
-    #tabbrowser-tabbox {
-        border-radius: var(--not-tab-radius) !important;
-    }
-
     #browser {
         padding: 5px !important;
         background: var(--transparentcy-idk) !important;
 
         :not(hbox) {
             border-radius: var(--not-tab-radius) !important;
+            background-color: rgba(0, 0, 0, 0) !important;
         }
     }
 }
