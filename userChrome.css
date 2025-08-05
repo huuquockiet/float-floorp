@@ -38,6 +38,10 @@
 
 /* Config */
 
+:root[lwt-icon-fill-attention] {
+    --line-gradient: var(--lwt-accent-color);
+}
+
 :root {
     /*--lwt-accent-color: light-dark(
         rgba(255, 255, 255, 0.5),
@@ -186,7 +190,7 @@
     background: var(--line-gradient) !important;
     position: absolute;
     border-radius: 8px;
-    bottom: -3px;
+    bottom: -2px;
     right: 25%;
     animation: appear 200ms ease-out;
 }
